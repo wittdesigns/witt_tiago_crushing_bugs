@@ -120,3 +120,21 @@ footer {
 .orange-headline {
 	color: orange;
 }
+
+
+
+#reset-btn{
+
+	color: aqua;
+	font-size: 1.7em; 
+	letter-spacing: 2px; 
+	margin: 10px 0;
+	position: relative;
+	top: 65px;
+	width:600px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+
+
