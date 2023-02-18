@@ -34,17 +34,18 @@ function handleDrop(e) {
     }
 }
 
-
-
-
+function handleRemove(e) {
+    console.log('removed piece from drop zone');
+    this.classList.remove("occupied");
+}
 
 theButtons.forEach(button => button.addEventListener("click", changeBGImage));
 
 puzzlePieces.forEach(piece => piece.addEventListener("dragstart", handleStartDrag));
 
-dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver));
-
-dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
-
-
+dropZones.forEach(zone => {
+    zone.addEventListener("dragover", handleDragOver);
+    zone.addEventListener("drop", handleDrop);
+    zone.addEventListener("DOMNodeRemoved", handleRemove);
+});
 
