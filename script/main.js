@@ -5,9 +5,17 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
     dropZones = document.querySelectorAll('.drop-zone'),
     draggedPiece;
 
-function changeBGImage() {
-    puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
-}
+
+	function changeBGImage() {
+		let imageUrl = `url(images/backGround${this.id}.jpg)`;
+		puzzleBoard.style.backgroundImage = imageUrl;
+		puzzlePieces.forEach((piece, index) => {
+		  piece.src = `images/piece${index + 1}_${this.id}.jpg`;
+		});
+	  }
+
+
+
 
 function handleStartDrag() {
     console.log('started dragging this piece:', this);
@@ -38,6 +46,8 @@ function handleRemove(e) {
     console.log('removed piece from drop zone');
     this.classList.remove("occupied");
 }
+
+
 
 theButtons.forEach(button => button.addEventListener("click", changeBGImage));
 
