@@ -6,7 +6,6 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
     dropZones = document.querySelectorAll('.drop-zone'),
     draggedPiece;
 
-
 	
 	function changeBGImage() {
 		let imageUrl = `url(images/backGround${this.id}.jpg)`;
@@ -43,14 +42,10 @@ function handleDrop(e) {
     }
 }
 
-
-
 function handleRemove(e) {
     console.log('removed piece from drop zone');
     this.classList.remove("occupied");
 }
-
-
 
 theButtons.forEach(button => button.addEventListener("click", changeBGImage));
 
@@ -68,3 +63,7 @@ puzzlePiecesBoard.forEach(zone => {
     zone.addEventListener("drop", handleDrop);
     zone.addEventListener("DOMNodeRemoved", handleRemove);
 });
+
+
+
+
